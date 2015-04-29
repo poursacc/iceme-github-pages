@@ -56,117 +56,45 @@
       </div><!-- /.container-fluid -->
     </nav>
 
-
-    <div class="wrapper">
-      <div class="lead">
-        <h1>DÉGUSTEZ UNE GLACE</h1>
-        <h2>MAINTENANT TOUT DE SUITE</h2>
-        <p>
-          <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#orderForm">Je veux une glace</button>
-        </p>
-      </div>
-    </div>
-
-    <!-- Modal -->
-    <div class="modal fade" id="orderForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            <h4 class="modal-title" id="myModalLabel">Commandez une glace!</h4>
-          </div>
-          <div class="modal-body">
-            <div id="wufoo-qts9t261i6irej">
-              Fill out my <a href="https://poursacc.wufoo.com/forms/qts9t261i6irej">online form</a>.
-              </div>
-              <div id="wuf-adv" style="font-family:inherit;font-size: small;color:#a7a7a7;text-align:center;display:block;">The easy to use <a href="http://www.wufoo.com/form-builder/">Wufoo form builder</a> helps you make forms easy, fast, and fun.</div>
-              <script type="text/javascript">var qts9t261i6irej;(function(d, t) {
-              var s = d.createElement(t), options = {
-              'userName':'poursacc',
-              'formHash':'qts9t261i6irej',
-              'autoResize':true,
-              'height':'466',
-              'async':true,
-              'host':'wufoo.com',
-              'header':'show',
-              'ssl':true};
-              s.src = ('https:' == d.location.protocol ? 'https://' : 'http://') + 'www.wufoo.com/scripts/embed/form.js';
-              s.onload = s.onreadystatechange = function() {
-              var rs = this.readyState; if (rs) if (rs != 'complete') if (rs != 'loaded') return;
-              try { qts9t261i6irej = new WufooForm();qts9t261i6irej.initialize(options);qts9t261i6irej.display(); } catch (e) {}};
-              var scr = d.getElementsByTagName(t)[0], par = scr.parentNode; par.insertBefore(s, scr);
-              })(document, 'script');</script>
-
-          </div>
-          <!--<div class="modal-footer">
-            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary">Save changes</button>
-          </div>!-->
-        </div>
-      </div>
-    </div>
-
     <div class="vertical-spacer"></div>
 
     <div class="container">
       <div class="row">
-        <div class="col-xs-12 text-center">
-          <h2>Inscrivez-vous à la newsletter</h2>
-          <!-- Begin MailChimp Signup Form -->
-          <link href="//cdn-images.mailchimp.com/embedcode/slim-081711.css" rel="stylesheet" type="text/css">
-          <div id="mc_embed_signup">
-          <form action="http://github.us10.list-manage.com/subscribe/post?u=b2d4101d98e64e830b5833b89&amp;id=65d518da85" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate form-inline" target="_blank" novalidate>
-            <div id="mc_embed_signup_scroll">
-            
-              <input type="email" value="" name="EMAIL" class="email form-control" id="mce-EMAIL" placeholder="email address" required>
-              <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-              <input type="submit" value="Suivez-nous" name="subscribe" id="mc-embedded-subscribe" class="btn btn-primary form-control">
-            </div>
-          </form>
-        </div>
+        <div class="col-xs-12 col-sm-6">
+          <div id="map" style="width: 100%; height: 400px;"></div>
 
-<!--End mc_embed_signup-->
+          <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js"></script>
+
+          <script type="text/javascript">
+            var myLatlng = new google.maps.LatLng(48.852937,2.364178);
+
+            var myOptions = {
+                zoom: 14,
+                center: myLatlng,
+                mapTypeId: google.maps.MapTypeId.ROADMAP,
+                styles: [{"featureType":"landscape.natural","elementType":"geometry.fill","stylers":[{"visibility":"on"},{"color":"#e0efef"}]},{"featureType":"poi","elementType":"geometry.fill","stylers":[{"visibility":"on"},{"hue":"#1900ff"},{"color":"#c0e8e8"}]},{"featureType":"road","elementType":"geometry","stylers":[{"lightness":100},{"visibility":"simplified"}]},{"featureType":"road","elementType":"labels","stylers":[{"visibility":"off"}]},{"featureType":"transit.line","elementType":"geometry","stylers":[{"visibility":"on"},{"lightness":700}]},{"featureType":"water","elementType":"all","stylers":[{"color":"#7dcdcd"}]}]
+            };
+
+            var map = new google.maps.Map(document.getElementById('map'), myOptions);
+            var marker = new google.maps.Marker({
+                position: myLatlng,
+                map: map,
+                title: "You are here!"
+            });
+          </script>
+
+        </div>
+        <div class="col-xs-12 col-sm-6">
+          <h1>Contact</h1>
+          <p><i class="fa fa-phone"></i> 06 00 00 00 00</p>
+          <p><i class="fa fa-map-marker"></i> Hameau du Mottet - 73260 Valmorel</p>
         </div>
       </div>
     </div>
 
-    <div class="vertical-spacer"></div>
-
-    <div class="container">
-      <div class="row text-center">
-        <div class="col-sm-6 col-md-3 feature">
-          <img src="images/icon_57707/icon_57707.png" width="96">
-          <p>
-            Choisissez jusque trois parfums
-            parmis notre catalogue de <strong>1000</strong> glaces maison.
-          </p>
-        </div>
-        <div class="col-sm-6 col-md-3 feature">
-          <img src="images/icon_29388/icon_29388.png" width="96">
-          <p>
-            L'application vous <strong>géolocalise</strong> automatiquement et vous
-            indique le temps d'attente estimé.
-          </p>
-        </div>
-        <div class="col-sm-6 col-md-3 feature">
-          <img src="images/icon_24755/icon_24755.png" width="96">
-          <p>
-            Un de nos supers livreurs fonce pour vous apporter votre glace,
-            qui sera <strong>préparée juste à temps</strong>.
-          </p>
-        </div>
-        <div class="col-sm-6 col-md-3 feature">
-          <img src="images/icon_17805/icon_17805.png" width="96">
-          <p>
-            Pas de monnaie ? Pas un problème, le paiement est <strong>automatiquement</strong>
-            débité sur votre carte bancaire.
-          </p>
-        </div>
-      </div>
-    </div>
 
     <div class="vertical-spacer"></div>
-
+  
     <div id="footer">
       <div class="container">
         <div class="row">
